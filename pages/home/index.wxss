@@ -1,0 +1,191 @@
+/* pages/home/index.wxss */
+.home-swiper-wrapper{
+  width: 100%;
+  height:350rpx; 
+}
+.home-banner-img{
+  width: 750rpx;
+  height:450rpx; 
+}
+
+.lisref_wrapper{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  margin: 25rpx auto;
+}
+.lisref_img_box{
+  margin: 25rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lisref_content_img{
+  margin-right:50rpx; 
+  height: 140rpx;
+}
+.lisref_content_img:nth-child(2){
+  margin-right: 0
+}
+.intref_desc_box{
+  text-align: center;
+}
+.intref_desc{
+  padding: 10rpx 30rpx;
+  background-color:#e3e3e3;
+  font-size: 26rpx;
+  color: #333333;
+}
+.intref_text_box{
+  box-sizing: border-box;
+  margin: 25rpx auto;
+  padding: 0 25rpx;
+  text-align: left;
+}
+.intref_text{
+  font-size: 24rpx;
+  color: #333333;
+}
+.intref_img{
+  margin: 25rpx auto;
+  text-align: center;
+}
+.intref_img_bg01{
+  width: 570rpx;
+  height: 270rpx;
+}
+intref_img_bg02{
+  width: 488rpx;
+  height: 360rpx;
+}
+.intref_img_bg03{
+  width: 530rpx;
+  height: 430rpx;
+}
+.plan_box{
+  position: relative;
+  border: 1rpx solid #ff9900;
+  margin-bottom: 40rpx;
+}
+.plan_bleft{
+  position: absolute;
+  left: 25rpx;
+  top: 45%;
+  z-index: 60;
+  width: 46rpx;
+  height: 46rpx;
+}
+.plan_bright{
+  position: absolute;
+  right: 25rpx;
+  top: 45%;
+  z-index: 60;
+  width: 46rpx;
+  height: 46rpx;
+}
+.plan_wrapper{
+  min-height: 540rpx;
+}
+.plan_title{
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #ff9900;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.plan_text_list{
+  display: flex;
+  justify-content: center;
+}
+.plan_text_list>view{
+  font-size: 22rpx;
+  line-height: 36rpx;
+  margin: 10rpx auto;
+  box-sizing: border-box;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  width: 33.33%;
+}
+.plan_text_center{
+  border-left: 1rpx dashed #ff9900;
+  border-right: 1rpx dashed #ff9900;
+}
+.plan_tap_box{
+  position: relative;
+}
+.plan_tap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(255,255,255, 0.5)
+}
+.prelis_wrapper{
+  border: 1rpx solid #ff9900;
+  position: relative;
+  height:360rpx;
+}
+.prelis_wrapper swiper{
+  height: 360rpx;
+}
+.prelis_img{
+  width: 100%;
+  height: 300rpx;
+  display: block;
+}
+.prelis_text{
+  display: block;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-indent: 30rpx;
+   font-size: 24rpx;
+  background: #ff9900;
+  color: #fff;
+}
+.adv_box{
+  margin-bottom: 40rpx;
+}
+.adv_list{
+  width: 90%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15rpx auto;
+}
+.adv_list_top{
+  width: 75%;
+}
+.adv_list>view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.adv_list text{
+  font-size: 22rpx;
+  display: block;
+  margin: 15rpx 0;
+}
+.adv_01,.adv_05,.adv_03{
+  width: 190rpx;
+  height: 160rpx;
+}
+.adv_02{
+  width: 190rpx;
+  height: 160rpx;
+  color: #fff;
+}
+
+.adv_04,.adv_06{
+  width: 230rpx;
+  height: 190rpx;
+   color: #fff;
+}

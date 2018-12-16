@@ -1,0 +1,52 @@
+<!--pages/freeget/index.wxml-->
+<view class='wrapper'>
+  <copvip bindshowTap="showVip"></copvip>
+  <headers bindpagePerson='gotomy'></headers>
+  <view class='freeget_top'>
+    <image class='freeget_banner' src="{{cdata.img[1]?cdata.img[1]:'../../image/hbanner01.jpg'}}"></image>
+    <view class='freeget_text'>
+      <text class='freget_title'>{{cdata.title}}</text>
+      <text class='freeget_oldpri'>原价：￥{{cdata.original_price}}</text>
+      <text class='freeget_nwpri'>￥{{cdata.price}}</text>
+    </view>
+  </view>
+  <view class='freeget_line'></view>
+  <view class='freeget_conbox'>
+    <text class='frecon_title'>套餐包含内容</text>
+    <view class='freeget_dline'></view>
+  </view>
+
+  <view class='frecon_detail'>
+    <view class='frecon_dlist'>
+      <text>名称</text>
+      <text>标准</text>
+      <text>原价</text>
+    </view>
+    <block wx:if="{{cdata.content && cdata.content.length>0}}">
+    <block wx:for="{{cdata.content}}" wx:key="{{item.id}}">
+    <view class='frecon_dlist'>
+      <text>{{item.name}}</text>
+      <text>{{item.standard}}</text>
+      <text>{{item.original_price}}元</text>
+    </view>
+    </block>
+    </block>
+    <view class='frecon_dlist'>
+      <text></text>
+      <text>总价值</text>
+      <text>{{cdata.price_sum}}元</text>
+    </view>
+  </view>
+  <view class='freeget_line'></view>
+
+  <view class='tel_box'>
+    <image src='../../image/phone.png' class='icon_phone'></image>
+    <input class='tel_input' placeholder="请输入您的手机号码" focus="{{focus}}" bindinput='getTel' maxlength='11' />
+  </view>
+
+  <view class='freeget_line'></view>
+
+  <view class='get_btn'>
+    <button class='gbtn' hover-class="btn_act" bindtap='getNow'>立即领取</button>
+  </view>
+</view>

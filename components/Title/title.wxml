@@ -1,0 +1,6 @@
+<!--components/Title/title.wxml-->
+<view class='lisref_title_box'>
+  <image src='../../image/hbg_left.png' class="lisref_hbgl"></image>
+  <text class='lisref_title'>{{data_title}}</text>
+  <image src='../../image/hbg_right.png' class="lisref_hbgr"></image>
+</view>

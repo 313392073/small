@@ -1,0 +1,35 @@
+<view class="wrapper">
+  <headers fixd_title="加米谷大数据 — 个人中心" bindpagePerson="getohome"></headers>
+  <view class='getcop-main'>
+  <view class='top-qiqiu'>
+    <image class='qiqiu' src='../../image/qiqiu.png'></image>
+  </view>
+  <view class='line'></view>
+  <view class='cop-box'>
+      <block wx:for="{{coplist}}" wx:key="{{index}}">
+        <block wx:if="{{item.status == 1}}">
+          <view class='list' style="background: url('{{copUrl}}') no-repeat center;background-size: contain;">
+            <view class='get-bths'>
+              <button class='btn_get' hover-class="login_hover" bindtap='showTip'>已领取</button>
+            </view>
+            <view class='get-desc'>
+              <view class='price'><text>{{item.price}}</text>元</view>
+              <text>{{item.explain}}</text>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+         <view class='list' style="background: url('{{copUrl}}') no-repeat center;background-size: contain;">
+          <view class='get-bths'>
+            <button class='btn_get btn_get_nobk' hover-class="login_hover" data-datas='{{item}}' bindtap='getcop'>领取</button>
+          </view>
+          <view class='get-desc'>
+            <view class='price'><text>{{item.price}}</text>元</view>
+            <text>{{item.explain}}</text>
+          </view>
+        </view>
+        </block>
+      </block>
+  </view>
+  </view>
+</view>

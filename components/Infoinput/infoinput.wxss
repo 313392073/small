@@ -1,0 +1,36 @@
+/* components/Infoinput/infoinput.wxss */
+.info_wrapper{
+  width: 100%;
+}
+.info_form{
+  width: 100%;
+  margin: 25rpx auto;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.info_list{
+  margin-bottom: 25rpx;
+}
+.info_list input{
+  height: 76rpx;
+  line-height: 76rpx;
+  border: 1px solid #ff9900;
+  border-radius: 38rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.info_list .info_btn{
+  text-align: center;
+  background-color: #ff9900;
+  color: #ffffff;
+  height: 86rpx;
+  line-height: 86rpx;
+  border-radius: 43rpx;
+}
+.btn_act{
+  background-color: #ffac30!important;
+  border-color: #ffac30!important;
+  color: #333!important;
+}

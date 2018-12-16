@@ -1,0 +1,62 @@
+/* pages/actlis/index.wxss */
+.actlis_wrapper{
+  width: 100%;
+}
+.actlis_top_notice{
+  margin: 0 25rpx 25rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ff9900;
+  font-size: 26rpx;
+  color: #ffffff;
+  padding-left: 25rpx;
+}
+.actlis_list_box{
+  margin: 25rpx;
+}
+.actlis_img{
+  width: 100%;
+  height: 300rpx;
+}
+.actlis_desc{
+  margin-top:-9rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #eeeeee;
+  position: relative;
+  text-indent: 30rpx;
+}
+.actlis_rmbnum{
+  color: #ff9900;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-right: 30rpx;
+}
+.actlis_rmbold{
+  color: #b3b2b2;
+  font-size: 28rpx;
+  text-decoration: line-through;
+}
+.actlis_btn{
+  position: absolute;
+  display:inline;
+  right: 30rpx;
+  top: 17rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  border-radius: 38rpx;
+  text-align: center;
+  padding-left:0;
+}
+.actlis_btn_act{
+  background-color: #ff9900;
+}
+.actlis_btn_over{
+  background-color: #999999;
+}
+
+.btn_act{
+  background-color: #ffac30!important;
+  border-color: #ffac30!important;
+  color: #333!important;
+}

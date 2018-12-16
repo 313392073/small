@@ -1,0 +1,23 @@
+/* components/Header/headers.wxss */
+.headers_wrapper{
+  width: 750rpx;
+}
+.home-top-wrapper{
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  margin: 15rpx auto;
+}
+.home-img-01{
+  width: 250rpx;
+  height: 60rpx;
+}
+.home-person{
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 25rpx;
+  top: 4rpx;
+}

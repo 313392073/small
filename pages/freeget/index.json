@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "加米谷大数据 — 免费领取",
+  "usingComponents": {
+    "headers": "/components/Headers/headers",
+    "copvip": "/components/Copvip/Copvip"
+  },
+  "enablePullDownRefresh": false
+}

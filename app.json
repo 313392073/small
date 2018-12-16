@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/home/index",
+    "pages/login/index",
+    "pages/coptra/index",
+    "pages/getcop/index",
+    "pages/freetest/index",
+    "pages/actlis/index",
+    "pages/freeget/index",
+    "pages/detail/index",
+    "pages/freelis/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "加米谷大数据",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#999999",
+    "selectedColor":"#ff9900",
+    "backgroundColor":"#ffffff",
+    "borderStyle": "black",
+    "list":[
+      {
+        "pagePath":"pages/home/index",
+        "text":"首页",
+        "iconPath":"./image/home.png",
+        "selectedIconPath":"./image/home-act.png"
+      },
+      {
+        "pagePath": "pages/actlis/index",
+        "text": "活动课",
+        "iconPath": "./image/actlis.png",
+        "selectedIconPath": "./image/actlis-act.png"
+      },
+      {
+        "pagePath": "pages/freelis/index",
+        "text": "免费试听课",
+        "iconPath": "./image/freelis.png",
+        "selectedIconPath": "./image/freelis-act.png"
+      },
+      {
+        "pagePath": "pages/freetest/index",
+        "text": "免费测试",
+        "iconPath": "./image/freetest.png",
+        "selectedIconPath": "./image/freetest-act.png"
+      },
+      {
+        "pagePath": "pages/coptra/index",
+        "text": "企业内训",
+        "iconPath": "./image/coptra.png",
+        "selectedIconPath": "./image/coptra-act.png"
+      }
+    ]
+  }
+}

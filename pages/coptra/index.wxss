@@ -1,0 +1,150 @@
+/* pages/coptra/index.wxss */
+.coptra_wrapper{
+  width: 100%;
+  border-top: 1rpx solid #d6d6d6;
+}
+.zx_wrapper{
+  width: 100%;
+  margin-bottom: 25rpx;
+}
+.zx_img_box,.zx_title_box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+.zx_img{
+  width: 120rpx;
+  height: 120rpx;
+  margin:auto;
+}
+.zx_bgimg{
+  width: 90rpx;
+  height: 14rpx;
+}
+.zx_text_list{
+  margin: auto;
+  text-align: center;
+}
+
+.zx_title_list{
+  display: block;
+  font-size: 26rpx;
+  color: #3a3d3d;
+  line-height: 2
+}
+.zx_desc_list{
+  display: block;
+  font-size: 22rpx;
+  color: #333333;
+}
+.nx_wrapper,.teacher_wrapper{
+  width: 100%;
+  margin: 25rpx auto;
+}
+.nx_box{
+  margin: 25rpx;
+  height: 220rpx;
+}
+.nx_box image{
+  width: 100%;
+  height: 220rpx;
+}
+.teacher_box{
+  margin: 25rpx;
+  min-height: 460rpx;
+  position: relative;
+}
+.plan_bleft{
+  position: absolute;
+  left: 25rpx;
+  top: 45%;
+  z-index: 60;
+  width: 46rpx;
+  height: 46rpx;
+  background: url('http://www.dtinone.com/themes/mi/assets/img/zx_larr.png') no-repeat center;
+  background-size: contain;
+}
+.plan_bright{
+  position: absolute;
+  right: 25rpx;
+  top: 45%;
+  z-index: 60;
+  width: 46rpx;
+  height: 46rpx;
+  background: url('http://www.dtinone.com/themes/mi/assets/img/zx_rarr.png') no-repeat center;
+  background-size: contain;
+}
+.teacher_slider{
+  min-height: 450rpx;
+}
+.teacher_list{
+  width: 100%;
+  height: 450rpx;
+}
+.teacher_left{
+  float: left;
+  width: 35%;
+  margin-right: 30rpx;
+}
+.teacher_header{
+  display: block;
+  margin-top: 15rpx;
+  max-width: 100%;
+  height: 350rpx;
+}
+.teacher_name{
+  display: block;
+  width: 100%;
+  line-height: 80rpx;
+  background-color: #ff9900;
+  color: #ffffff;
+  font-size: 28rpx;
+  text-align: center;
+}
+.teacher_right{
+  float: right;
+  width: calc(65% - 30rpx);
+}
+.teacher_desc{
+  line-height: 46rpx;
+  font-size: 24rpx;
+  color: #333333;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+}
+
+.exp_wrapper{
+  margin: 25rpx;
+}
+.exp_box{
+  width: 100%;
+  overflow: hidden;
+}
+.exp_list{
+  float: left;
+  width: calc(50% - 16rpx);
+  margin-left: 30rpx;
+  margin-bottom: 15rpx;
+}
+.exp_list image{
+  width: 100%;
+  height: 196rpx;
+}
+.exp_list text{
+  font-size: 24rpx;
+}
+.exp_list:nth-child(odd){
+  margin-left: 0
+}
+.exp_desc{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

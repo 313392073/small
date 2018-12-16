@@ -1,0 +1,82 @@
+.getcop-main{
+  width: 100%;
+  height: 100%;
+  background-color: #ff9933;
+}
+.top-qiqiu{
+  text-align: center;
+  margin: 38rpx auto 60rpx;
+}
+.qiqiu{
+  width: 460rpx;
+  height: 132rpx;
+  margin: 0 auto;
+}
+.line{
+  width: 550rpx;
+  height: 12rpx;
+  background-color: #e26907;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+.cop-box{
+  width: 520rpx;
+  height: 585rpx;
+  background-color: #ffecd2;
+  margin: -3rpx auto 200rpx;
+  padding-top: 25rpx;
+}
+.list{
+  height:155rpx;
+  width:412rpx;
+  margin: 25rpx auto;
+  position: relative;
+}
+.get-bths{
+  position: absolute;
+  width: 123rpx;
+  top: 100rpx;
+  left: 0;
+  text-align: center;
+}
+.get-desc{
+  position: absolute;
+  top: 30rpx;
+  left: 155rpx; 
+  width: calc(100% - 123rpx);
+}
+.get_hover{
+  color: #ff9900;
+}
+
+.btn_get{
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #ffecdb;
+  border-radius: 40rpx;
+  font-size: 20rpx;
+  padding-left:14rpx;
+  padding-right:14rpx;
+  line-height: 1.6;
+  color: #ff8080;
+}
+.btn_get_nobk{
+  background-color: transparent;
+  color: #ffffff;
+}
+.btn_get::after{
+  border: none
+}
+.price{
+  font-size: 24rpx;
+  color: #ffffff;
+  line-height: 1;
+}
+.price>text{
+  font-size: 46rpx;
+  color: #ffffff;
+}
+.get-desc>text{
+  font-size: 24rpx;
+  color: #ffffff;
+}

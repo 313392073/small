@@ -1,0 +1,10 @@
+.fixd-vip{
+  position: fixed;
+  z-index: 9999;
+  bottom: 10%;
+  right: 0;
+}
+.fixd-vip image{
+  width: 80rpx;
+  height: 95rpx;
+}

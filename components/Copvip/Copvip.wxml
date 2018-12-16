@@ -1,0 +1,5 @@
+<block wx:if="{{show}}">
+  <view class='fixd-vip' bindtap='trigCop'>
+    <image src='../../image/vipbtn.png'></image>
+  </view>
+</block>

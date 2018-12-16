@@ -1,0 +1,45 @@
+<!--pages/freelis/index.wxml-->
+<view class='wrapper'>
+  <copvip bindshowTap="showVip"></copvip>
+  <headers bindpagePerson='gotomy'></headers>
+  <view class='freelis_wrapper'>
+    <block wx:if="{{datalist && datalist.length>0}}">
+      <block wx:for="{{datalist}}" wx:key="item.title">
+        <view class='freelis_list'>
+          <!-- <view class='freelis_video'></view> -->
+          <video class='freelis_video' src="{{item.video}}" controls></video>
+          <text class='freelis_title'>{{item.title}}</text>
+          <text class='freelis_desc' decode="{{true}}" space="{{true}}">共{{item.duration}}&emsp;&emsp;更新时间 {{item.add_time}}</text>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+        <view class="freelis_nodata">
+          <text>抱歉！暂无免费试听课。了解详情，请先预约~~~</text>
+        </view>
+    </block>
+    <view class='info_wrapper'>
+      <title data_title="免费申请试听"></title>
+      <view class='info_form'>
+        <form bindsubmit="formSubmit">
+          <view class='info_list'>
+            <input placeholder="请输入姓名" focus="{{focus}}" name='named' maxlength='10'/>
+          </view>
+          <view class='info_list'>
+            <input placeholder="请输入课程名称" focus="{{focus}}" name='classname' maxlength='20'/>
+          </view>
+          <view class='info_list'>
+            <input placeholder="请输入联系电话" focus="{{focus}}" name="tel" maxlength='11'/>
+          </view>
+          <view class='info_list'>
+            <input placeholder="请输入微信/QQ" focus="{{focus}}" name="wechat" maxlength='20' />
+          </view>
+          <view class='info_list'>
+            <button class='info_btn' hover-class="btn_act" form-type="submit">免费预约试听</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </view>
+  
+</view>

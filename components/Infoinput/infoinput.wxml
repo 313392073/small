@@ -1,0 +1,24 @@
+<!--components/Infoinput/infoinput.wxml-->
+<view class='info_wrapper'>
+  <title data_title="{{inputitle}}"></title>
+  <view class='info_form'>
+    <!-- <form bindsubmit="formSubmit"> -->
+    <form>
+      <view class='info_list'>
+        <input placeholder="请输入姓名" focus="{{focus}}" name='named' bindinput='usernameevent'/>
+      </view>
+      <view class='info_list'>
+        <input placeholder="请输入课程名称" focus="{{focus}}" name='classname'/>
+      </view>
+      <view class='info_list'>
+        <input placeholder="{{inputitle == '免费申请试听'?'请输入联系电话':'是否有基础'}}" focus="{{focus}}" name="{{inputitle == '免费申请试听' ? 'tel' : 'base' }}" />
+      </view>
+      <view class='info_list'>
+        <input placeholder="{{inputitle == '免费申请试听'?'请输入微信/QQ':'请输入联系方式'}}" focus="{{focus}}" name="{{inputitle == '免费申请试听'?'wechat':'tel'}}" />
+      </view>
+      <view class='info_list'>
+        <button class='info_btn' hover-class="btn_act" form-type="submit">{{inputitle == '免费申请试听'?'免费预约试听':'立即预估学习费用'}}</button>
+      </view>
+    </form>
+  </view>
+</view>

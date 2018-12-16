@@ -1,0 +1,8 @@
+<!--components/Header/headers.wxml-->
+<view class='headers_wrapper'>
+  <view class='home-top-wrapper'>
+    <image class='home-img-01' src='../../image/home01.png'></image>
+    <image class='home-person' src='../../image/p_icon.png' bindtap='toPerson'></image>
+  </view>
+</view>
+ 

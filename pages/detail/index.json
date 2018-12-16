@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "加米谷大数据",
+  "usingComponents": {
+    "headers":"/components/Headers/headers",
+    "title": "/components/Title/title",
+    "copvip": "/components/Copvip/Copvip"
+  }
+}

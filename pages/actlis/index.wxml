@@ -1,0 +1,35 @@
+<!--pages/actlis/index.wxml-->
+<view class='wrapper'>
+  <headers bindpagePerson='gotomy'></headers>
+  <view class='actlis_wrapper'>
+    <view class='actlis_top_notice'>
+      <text>{{notice}}</text>
+    </view>
+
+    <block wx:if="{{acilist.length>0}}">
+    <block wx:for="{{acilist}}" wx:key="{{item}}">
+    <block wx:if="{{item.type == 1}}">
+    <view class='actlis_list_box'>
+       <image class='actlis_img' data-act='true' bindtap='tofreeget' data-ids='{{item.id}}' src="{{item.img[0]?item.img[0]:'../../image/hbanner01.jpg'}}"></image>
+       <view class='actlis_desc'>
+          <text class='actlis_rmbnum'>￥{{item.price}}</text>
+          <text class='actlis_rmbold' decode="emsp">原价:&nbsp; {{item.original_price}}</text>
+          <button class='actlis_btn actlis_btn_act' hover-class='btn_act' data-act='true' data-ids='{{item.id}}' bindtap='tofreeget'>免费领取</button>
+       </view>
+    </view>
+    </block>
+    <block wx:if="{{item.type != 1}}">
+    <view class='actlis_list_box'>
+       <image class='actlis_img' src="{{item.img[0]?item.img[0]:'../../image/hbanner01.jpg'}}" bindtap='tofreeget' data-act='false'></image>
+       <view class='actlis_desc'>
+          <text class='actlis_rmbnum'>￥{{item.price}}</text>
+          <text class='actlis_rmbold' decode="emsp">原价:&nbsp; {{item.original_price}}</text>
+          <button class='actlis_btn actlis_btn_over' bindtap='tofreeget' data-act='false'>已领完</button>
+       </view>
+    </view>
+    </block>
+    </block>
+    </block>
+  </view>
+  <copvip bindshowTap="showVip"></copvip>
+</view>

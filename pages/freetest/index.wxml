@@ -1,0 +1,58 @@
+<!--pages/freetest/index.wxml-->
+<view class='wrapper'>
+  <copvip bindshowTap="showVip"></copvip>
+  <headers bindpagePerson='gotomy'></headers>
+  <view class='freetest_wrapper'>
+    <view class='freetest_notice'>
+      <text class='freetest_notice_text'>想学习大数据课程，却不知道自己适合什么课程？填了这份表单，加米谷课程老师给你专业解答！</text>
+      <view class='freetest_line'></view>
+      <view class='freetest_line'></view>
+    </view>
+
+    <view class='freetest_con'>
+      <block wx:for="{{testlist}}" wx:key="item.id">
+        <view class='freetest_list'>
+          <text class='freetest_req' decode="emsp">{{index + 1}}&emsp;、{{item.title}}</text>
+          <view class='freetest_btns'>
+          <block wx:for="{{item.choose}}" wx:for-item='cell'  wx:for-index="cellindex" wx:key="{{cell.id}}">
+            <button class="{{item.tag == cell.id?'act':''}}" id='{{cell.id}}' bindtap='choose' data-index='{{cellindex}}' data-pindex='{{index}}'>
+              <block wx:if="{{cellindex == 0}}">
+                A：{{cell.title}}
+              </block>
+              <block wx:if="{{cellindex == 1}}">
+                B：{{cell.title}}
+              </block>
+              <block wx:if="{{cellindex == 2}}">
+                C：{{cell.title}}
+              </block>
+              <block wx:if="{{cellindex == 3}}">
+                D：{{cell.title}}
+              </block>
+            </button>
+          </block>
+          </view>
+        </view>
+      </block>
+      <view class="freetest_bline">
+        <text>Java / ASP.Net / Web前端等</text>
+      </view>
+
+      <view class='freetest_list'>
+        <text class='freetest_req'>6、请填写您的电话号码</text>
+        <view class="freetest_bline">
+          <input placeholder="18190722519" maxlength='11' bindblur='getTel' placeholder-style='color:#cccccc'/>
+        </view>
+      </view>
+
+      <view class='freetest_list'>
+        <text class='freetest_req'>7、请填写您的微信号码</text>
+        <view class="freetest_bline">
+          <input placeholder="加米谷大数据" maxlength='20' bindblur='getWechat' placeholder-style='color:#cccccc' />
+        </view>
+      </view>
+      <view class='freetest_rest'>
+        <button class='rest_btn' hover-class='btn_act' bindtap='subData'>获取测评结果</button>
+      </view>
+    </view>
+  </view>
+</view>

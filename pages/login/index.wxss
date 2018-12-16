@@ -1,0 +1,344 @@
+/* pages/login/index.wxss */
+.login_wrapper{
+  width: calc(100% - 50rpx);
+  margin: 25rpx;
+  box-sizing: border-box;
+  position: relative;
+  height: 260rpx;
+  background-color: #ff9900;
+}
+.login_header_box{
+  margin: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_header_on{
+  height: 140rpx;
+  width: 140rpx;
+  border-radius: 50%;
+}
+.login_info{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_welcome{
+  font-size: 28rpx;
+  color: #ffffff;
+  white-space:nowrap
+}
+.ligin_icon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 8rpx;
+  vertical-align: middle
+}
+.login_welcome image{
+  width: 40rpx;
+  height: 36rpx;
+}
+.login_welcome{
+  margin-right: 30rpx;
+}
+.login_btn{
+  position: absolute;
+  left: 50%;
+  margin-left: -102rpx;
+  bottom:-35rpx;
+}
+.login_hover{
+  color: #ff9900;
+}
+
+.btn_login{
+  background-color: #ffffff;
+  border: 1px solid #ffecdb;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+}
+.btn_login::after{
+  border: none
+}
+.login_content{
+   width: calc(100% - 50rpx);
+   margin: 25rpx;
+}
+.login_tab{
+  margin: 25rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_tab text{
+  width: 50%;
+  color: #999999;
+  line-height: 3;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #cccccc;
+}
+
+
+.login_main{
+  margin: 50rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.login_box{
+ text-align: center;
+}
+.login_main_title{
+  display: block;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  line-height: 3;
+}
+.login_main_get{
+  display: block;
+  font-size: 26rpx;
+  color: #333333;
+}
+.login_gbtn{
+  display: inline-block;
+  margin-top: 50rpx;
+  background-color: #ff9900;
+  color: #ffffff;
+  font-size: 32rpx;
+  border-radius: 40rpx;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+.get_hover{
+  color: #999999;
+}
+.course_wrapper{
+  margin: 30rpx auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.course_list{
+  width: 100%;
+  margin: 30rpx 0;
+  overflow: hidden;
+}
+.course_left{
+  float: left;
+  width: 30%;
+}
+.course_left image{
+  width: 100%;
+  height: 220rpx;
+}
+.course_right{
+  margin-left: 15rpx;
+  width: calc(70% - 15rpx);
+  float: left;
+}
+.course_title{
+  font-size: 30rpx;
+  color: #333333;
+   overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1; 
+}
+.course_gift{
+  margin: 25rpx 0;
+  line-height: 40rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.course_gift button{
+  background: #ff9900;
+  color: #ffffff;
+  font-size: 24rpx;
+  border: none;
+  padding-left: 12rpx;
+  padding-right: 10rpx;
+  border-radius: 4rpx;
+  margin-right: 12rpx;
+  vertical-align: top;
+  line-height: 1.8;
+}
+.course_gift text{
+  font-size: 28rpx;
+}
+.course_desc{
+  margin-bottom: 0;
+  font-size: 24rpx;
+  color: #999999;
+}
+.course_votime{
+  margin-right: 15rpx;
+  border: 1rpx solid #eeeeee;
+  padding: 8rpx;
+}
+.coupons{
+  overflow: hidden;
+}
+.coupons_list{
+  float: left;
+  width: calc(50% - 60rpx);
+  margin: 30rpx;
+  position: relative;
+  height: 130rpx;
+}
+.coupons_list image{
+  width: 100%;
+  height: 130rpx;
+}
+.coupons_list .card_price{
+  position: absolute;
+  top: 25rpx;
+  left: 30%;
+  width: 70%;
+  right: 50%;
+  text-align: center;
+  font-size: 40rpx;
+  color: #ffffff;
+  z-index: 50;
+  white-space: nowrap;
+}
+.coupons_list .card_explain{
+  position: absolute;
+  top: 85rpx;
+  left: 30%;
+  width: 70%;
+  right: 50%;
+  text-align: center;
+  font-size: 16rpx;
+  color: #ffffff;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.tab_box{
+  display: none;
+}
+.act{
+  border-bottom: 2rpx solid #ff9900!important;
+  background-color: #ffedd3;
+  color: #ff9933!important;
+}
+
+.actd{
+  display: block;
+}
+.logd_wrapper,.reg_wrapper{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.regshow{
+  display: block;
+}
+.reg_box{
+  width: 600rpx;
+  height: 670rpx;
+  margin: 130rpx auto;
+  background-color: #ffffff;
+  position: relative;
+}
+.close_img{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 25rpx;
+  top: 25rpx;
+  z-index: 999;
+}
+.logo_box{
+  position: absolute;
+  top: -57rpx;
+  left: 50%;
+  margin-left: -57rpx;
+  z-index: 50;
+  background-color: transparent;
+}
+.reg_top{
+  text-align: center;
+  height: 75rpx;
+  position: relative;
+  overflow: hidden;
+}
+.cir_half{
+  position: absolute;
+  width: 140rpx;
+  height: 140rpx;
+  top: -70rpx;
+  left: 50%;
+  margin-left: -70rpx;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.5)
+}
+.reg_logo{
+  width: 114rpx;
+  height: 114rpx;
+}
+.reglist_box{
+  margin: 10rpx 50rpx;
+}
+.reg_list{
+  white-space: nowrap;
+  border-bottom: 1rpx solid #dddddd;
+  margin: 25rpx 0;
+  position: relative;
+}
+.reg_list image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.reg_list input{
+  display: inline-block;
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.regtext_list{
+  text-align: right;
+  font-size: 30rpx;
+  margin: 25rpx 0;
+}
+.reg_list .code_btn{
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  font-size: 28rpx;
+  right: 0rpx;
+  background-color: #ff9900;
+  z-index: 1000;
+}
+.now_login{
+  color: #ff9900;
+  margin-left: 8rpx;
+}
+.now_reg{
+  background-color: #ff9900;
+  color: #ffffff;
+  border-radius: 50rpx;
+}
+.now_reg_list{
+  margin-top: 50rpx;
+}
+.reg_bg{
+  padding-top: 90rpx;
+}
+.reg_bg image{
+  margin: 0 auto;
+  height:110rpx;
+  width: 600rpx; 
+}

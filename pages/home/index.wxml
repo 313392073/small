@@ -1,0 +1,159 @@
+<!--pages/home/index.wxml-->
+<view class='wrapper'>
+  <block wx:if="{{showCop}}">
+    <copvip bindshowTap="showVip"></copvip>
+  </block>
+  <headers bindpagePerson="gotomy"></headers>
+  <swiper class='home-swiper-wrapper' indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" indicator-active-color="#ff9900">
+  <block wx:for="{{imgurl}}" wx:key="item" circular='true'>
+    <swiper-item>
+      <image src='{{item}}' class='home-banner-img'></image>
+    </swiper-item>
+  </block>
+  </swiper>
+  <view class='lisref_wrapper'>
+    <title data_title='大数据课程推荐'></title>
+    <view class='lisref_img_box'>
+      <image class='lisref_content_img' bindtap='gocouese' data-courseId='2' src='../../image/home02.jpg'></image>
+      <image class='lisref_content_img' bindtap='gocouese' data-courseId='3' src='../../image/home03.jpg'></image>
+    </view>
+    <view class='intref_wrapper'>
+    <title data_title='大数据前景、职业、薪资等介绍'></title>
+    <view class='intref_desc_box'>
+      <text class='intref_desc'>市面大数据培训占比</text>
+    </view>
+    <view class='intref_text_box'>
+      <text class='intref_text'>{{cstr}}</text>
+    </view>
+    </view>
+    <view class='intref_img'>
+      <image class='intref_img_bg01' src='../../image/hbg01.png'></image>
+    </view>
+    <view class='intref_desc_box'>
+      <text class='intref_desc'>真正大数据市场价值很高</text>
+      <view class='intref_text_box'>
+      <text class='intref_text'>以北京为例，真正大数据工程师平均年薪达201640-451670</text>
+    </view>
+    </view>
+    <view class='intref_img'>
+      <image class='intref_img_bg02' src='../../image/hbg02.png'></image>
+    </view>
+    <view class='intref_desc_box'>
+      <text class='intref_desc'>大数据工程师人才缺口大</text>
+      <view class='intref_text_box'>
+      <text class='intref_text'>{{cstr3}}</text>
+    </view>
+  </view>
+  <view class='intref_img'>
+      <image class='intref_img_bg03' src='../../image/hbg03.png'></image>
+  </view>
+  <title data_title='专业的职场规划'></title>
+  
+  <!-- 职场规划 -->
+  <view class='plan_box'>
+  <swiper class='home-swiper-wrapper plan_wrapper' indicator-dots="{{pindicatorDots}}"  autoplay="{{pautoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" indicator-active-color="#ff9900" bindchange="swiperChange" current='{{plancur}}'>
+  <block wx:for="{{planlist}}" wx:key="item.desc" circular='true'>
+    <swiper-item>
+      <view class='plan_list'>
+        <text class='plan_title'>{{item.title}}</text>
+        <view class='plan_text_list'>
+          <view class='plan_tap_box'>
+            <view class='plan_tap'></view>
+            <text>{{item.text1}}</text>
+          </view>
+           <view class='plan_text_center'>
+           <text>{{item.text2}}</text>
+           </view>
+         <view class='plan_tap_box'>
+          <view class='plan_tap'></view>
+          <text>{{item.text3}}</text>
+         </view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+  </swiper> 
+  <view class='plan_bleft' bindtap='tapprev' style="background:url('../../image/zx_larr.png') no-repeat center; background-size: contain;"></view>
+  <view class='plan_bright' bindtap='tapnext' style="background:url('../../image/zx_rarr.png') no-repeat center; background-size: contain;"></view>
+  </view>
+  <title data_title='加米谷优势'></title>
+  <view class='adv_box'>
+    <view class='adv_list adv_list_top'>
+      <view class='adv_01' style="background:url('{{copHomebg2}}') no-repeat center; background-size: contain;">
+        <view>
+          <text>签订就业</text>
+          <text>协议</text>
+        </view>
+      </view>
+      <view class='adv_02' style="background:url('{{copHomebg1}}') no-repeat center; background-size: contain;">
+        <view>
+        <text>上课时间</text>
+        <text>灵活</text>
+        </view>
+      </view>
+      <view class='adv_03' style="background:url('{{copHomebg2}}') no-repeat center; background-size: contain;">
+        <view>
+        <text>小班线下</text>
+        <text>线上教学</text>
+        </view>
+      </view>
+    </view>
+    <view class='adv_list'>
+      <view class='adv_04' style="background:url('{{copHomebg1}}') no-repeat center; background-size: contain;">
+        <view>
+        <text>大数据标准组</text>
+        <text>专家授课</text>
+        </view>
+      </view>
+      <view class='adv_05' style="background:url('{{copHomebg2}}') no-repeat center; background-size: contain;">
+        <view>
+        <text>丰富企业</text>
+        <text>项目实战</text>
+        </view>
+      </view>
+      <view class='adv_06' style="background:url('{{copHomebg1}}') no-repeat center; background-size: contain;">
+        <view>
+        <text>学员就业薪资</text>
+        <text>高达12K</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 背景图片加载远程的图片 -->
+  <title data_title='往期公开课活动'></title>
+
+  
+  <view class='prelis_wrapper'>
+    <swiper class='home-swiper-wrapper' indicator-dots="{{indicatorDotsd}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" indicator-active-color="#ff9900">
+    <block wx:for="{{actlist}}" wx:key="item.desc" circular='true'>
+      <swiper-item>
+        <image class='prelis_img' src='{{item.img}}'></image>
+        <text class='prelis_text'>{{item.title}}</text>
+      </swiper-item>
+    </block>
+    </swiper>
+  </view>
+  <view class='info_wrapper'>
+    <title data_title="免费申请试听"></title>
+    <view class='info_form'>
+      <form bindsubmit="formSubmit">
+        <view class='info_list'>
+          <input placeholder="请输入姓名" focus="{{focus}}" name='named' maxlength='10' value="{{info}}"/>
+        </view>
+        <view class='info_list'>
+          <input placeholder="请输入课程名称" focus="{{focus}}" name='classname' maxlength='20' value="{{info}}"/>
+        </view>
+        <view class='info_list'>
+          <input placeholder="请输入联系电话" focus="{{focus}}" name="tel" maxlength='11' value="{{info}}"/>
+        </view>
+        <view class='info_list'>
+          <input placeholder="请输入微信/QQ" focus="{{focus}}" name="wechat" maxlength='20' value="{{info}}" />
+        </view>
+        <view class='info_list'>
+          <button class='info_btn' hover-class="btn_act" form-type="submit">免费预约试听</button>
+        </view>
+      </form>
+    </view>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+/* components/Title/title.wxss */
+.lisref_title_box{
+  width: 100%;
+  text-align: center;
+  height: 64rpx;
+  margin: 25rpx auto;
+  position: relative
+}
+.lisref_hbgl,.lisref_hbgr{
+  width: 40rpx;
+  height: 14rpx;
+}
+.lisref_title{
+  color: #000000;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 0 15rpx;
+}

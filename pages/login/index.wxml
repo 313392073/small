@@ -1,0 +1,125 @@
+<!--pages/login/index.wxml-->
+<view class="wrapper">
+  <headers fixd_title="加米谷大数据 — 个人中心" bindpagePerson="getohome"></headers>
+  <view class='login_wrapper'>
+    <view class='login_header_box'>
+      <image class='login_header_on' src="{{userInfo?userInfo.avatarUrl:'../../image/dhead.png'}}"></image>
+    </view>
+    <view class='login_info'>
+      <view class='login_welcome'>
+        <text>Hi {{userInfo?userInfo.nickName:'欢迎新同学'}}</text>
+      </view>
+    </view>
+    <view class='login_btn'>
+      <button class='btn_login' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getAuth">授权登录</button>
+      <block wx:if="{{isOnTel}}">
+        <button class="btn_login" wx:if="{{hasUserInfo}}" hover-class="login_hover" bindtap='already'>已完善信息</button>
+      </block>
+      <block wx:if="{{!isOnTel}}">
+        <button class="btn_login" wx:if="{{hasUserInfo}}" hover-class="login_hover" bindtap='login'>完善信息</button>
+      </block>
+    </view>
+  </view>
+  <view class='login_content'>
+    <view class='login_tab'>
+      <text class="{{ tab.curtitle == '0'?'act':''}}" id='0' data-id='0' bindtap="tabEvent">预约课程</text>
+      <text class="{{ tab.curtitle == '1'?'act':''}}" id='1' data-id='1' bindtap="tabEvent">优惠券</text>
+    </view>
+    <!-- 预约课程 -->
+    <view class="course_wrapper tab_box {{tab.curcon=='0'?'actd':''}}">
+      <block wx:if="{{courselist.length > 0}}">
+        <block wx:for="{{courselist}}"  wx:key="{{item.id}}">
+          <view class='course_list' bindtap='godetail' data-ids='{{item.id}}'>
+            <view class='course_left'><image src="{{item.img[item.img.length-1]?item.img[item.img.length-1]:'../../image/detailbg.png'}}"></image></view>
+            <view class='course_right'>
+              <text class='course_title'>{{item.title}}</text>
+              <view class='course_gift'> 
+                <button size='mini'>预约礼</button>
+                <text>{{item.title}}</text>
+              </view>
+              <view class='course_desc'>
+                <text class='course_votime'>{{item.duration}}</text>
+                <text class='course_sbtime'>预约提交时间：{{item.add_time}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
+          <view class="login_main actd">
+          <view class='login_box'>
+              <image class='login_header_on' src='../../image/dnote.png'></image>
+              <text class='login_main_title'>您还没有预约任何课程呢！</text>
+              <text class='login_main_get'>快去预约免费试听课程吧！</text>
+              <button class='login_gbtn'  hover-class="get_hover" bindtap='getnow'>立即预约</button>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="coupons tab_box {{tab.curcon=='1'?'actd':''}}">
+      <block wx:if="{{couponslist.length > 0}}">
+          <view class="coupons tab_box actd">
+            <block wx:for="{{couponslist}}" wx:key='{{item.imgurl}}'>
+            <view class='coupons_list'  bindtap="openCards" data-card="{{item.card_id}}" data-code="{{item.code}}">
+              <image src='{{copUrl}}'></image>
+              <text class='card_price'>{{item.price}}元</text>
+              <text class='card_explain'>{{item.title}}</text>
+            </view>
+            </block>
+          </view>
+        </block>
+
+        <block wx:else>
+          <view class="login_main actd}}">
+            <view class='login_box'>
+                <image class='login_header_on' src='../../image/dnote.png'></image>
+                <text class='login_main_title'>您还没有领取任何优惠券呢！</text>
+                <text class='login_main_get'>快去领取优惠券吧！</text>
+                <button class='login_gbtn'  hover-class="get_hover" bindtap='getcoptra'>立即领取</button>
+            </view>
+          </view>
+        </block>
+    </view>
+  </view>
+  
+  <!-- 完善信息 -->
+  <view class="logd_wrapper {{loginshow?'regshow':''}}">
+    <view class='reg_box'>
+      <view class='logo_box'>
+        <image class='reg_logo' src='../../image/reg_top.png'></image>
+      </view>
+       <image src='../../image/close.png' class='close_img' bindtap='closelogin'></image>
+      <view class='reg_top'>
+      <view class='cir_half'></view>
+      </view>
+      <view class='reglist_box'>
+        <form bindsubmit="formSubmit">
+          <view class='reg_list'>
+            <image src='../../image/head.png'></image>
+            <input placeholder='请输入姓名' name='named' maxlength='10'/>
+          </view>
+          <view class='reg_list'>
+            <image src='../../image/phone.png'></image>
+            <input placeholder='请输入联系电话' name='tel' bindinput='getPhone' maxlength='11'/>
+          </view>
+          <view class='reg_list'>
+            <image src='../../image/check.png'></image>
+            <input placeholder='请输入手机验证码' name='code' maxlength='6'/>
+            <button class='code_btn' disabled="{{disabled}}" bindtap='getcode'>{{codeMsg}}</button>
+          </view>
+          <!-- <view class='regtext_list'>
+            <text>还没有账号,</text>
+            <text class='now_login' bindtap='nowreg'>立即注册</text>
+          </view> -->
+          <view class='now_reg_list'> 
+            <button class='now_reg' hover-class="btn_act" formType="submit">立即登录</button>
+          </view>
+        </form>
+      </view>
+      <view class='reg_bg'>
+          <image src='../../image/reg.jpg'></image>
+      </view>
+    </view>
+  </view>
+</view>

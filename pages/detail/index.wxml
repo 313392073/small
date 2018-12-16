@@ -1,0 +1,140 @@
+<!--pages/detail/index.wxml-->
+<view class='wrapper'>
+  <copvip bindshowTap="showVip"></copvip>
+  <headers bindpagePerson='tohome'></headers>
+  <image class='top_image' src='../../image/detail.jpg'></image>
+  <view class='detail_wrapper'>
+    <view class='detail_tab'>
+      <text class="{{tab.curTitle == '0'?'act':''}}" id='0' data-id='0' bindtap='tabEvent'>课程介绍</text>
+      <text class="{{tab.curTitle == '1'?'act':''}}" id='1' data-id='1' bindtap='tabEvent'>课程大纲</text>
+      <text class="{{tab.curTitle == '2'?'act':''}}" id='2' data-id='2' bindtap='tabEvent'>学费预估</text>
+    </view>
+    <!-- 课程介绍 -->
+    <view class="detail_intro detail_con {{tab.curCon == '0'?'actc':''}}">
+      <view class='detail_intro_title'>
+        <text class='intro_title_bold'>学习目标</text>
+        <text class='intro_title_en'>Study Goals</text>
+      </view>
+      <view class='detail_line'></view>
+      <view class='detail_line'></view>
+
+      <view class='study_list'>
+        <block wx:for="{{introlist}}" wx:key="{{item}}">
+        <text>{{index+1}} . {{item}}   </text>
+        </block>
+      </view>
+
+      <view class='detail_intro_title'>
+        <text class='intro_title_bold'>课程特色</text>
+        <text class='intro_title_en'>Course Advantages</text>
+      </view>
+      <view class='detail_line'></view>
+      <view class='detail_line'></view>
+      <view class='course_list'>
+        <view class='course_item_image'>
+        <block wx:for="{{introSpec}}" wx:key="{{item}}">
+          <image src="{{item.img?item.img:'../../image/detail01.png'}}"></image>
+        </block>
+        </view>
+        <view class='course_item_text'>
+          <block wx:for="{{introSpec}}" wx:key="{{item}}">
+            <text>{{item.name}}</text>
+          </block>
+        </view>
+      </view>
+
+      <view class='detail_intro_title'>
+        <text class='intro_title_bold'>适用对象</text>
+        <text class='intro_title_en'>Suitable Objects</text>
+      </view>
+      <view class='detail_line'></view>
+      <view class='detail_line'></view>
+
+      <view class='study_list'>
+        <block wx:for="{{introbject}}" wx:key="{{item}}">
+        <text>{{index+1}} . {{item}} </text>
+        </block>
+      </view>
+
+      <view class='detail_intro_title'>
+        <text class='intro_title_bold'>免费试听</text>
+        <text class='intro_title_en'>Free Classes</text>
+      </view>
+      <view class='detail_line'></view>
+      <view class='detail_line'></view>
+
+      <video class='detail_video' controls src='{{introinfo.video}}'></video>
+      <text class='detail_video_title'>{{introinfo.about}}</text>
+      <view class='detail_video_desc'>
+        <text>共{{introinfo.duration}}</text>
+        <text>更新时间：{{introinfo.add_time}}</text>
+      </view>
+    </view>
+
+     <!-- 课程大纲 -->
+    <view class="course_outline detail_con {{tab.curCon == '1'?'actc':''}}">
+      <view class='detail_intro_title'>
+        <text class='intro_title_bold'>加米谷学院：大数据开发工程师课程体系</text>
+      </view>
+      <view class='detail_line'></view>
+      <view class='detail_line'></view>
+
+      <view class='course_list_box'>
+      <block wx:for="{{step}}" wx:key="{{item.title}}">
+      <view class='course_item'>
+          <view class='course_title_box'>
+            <text class='intro_title_bold'>{{item.title}}</text>
+            <button class="course_detail_btn" data-index="{{index}}" bindtap='isdetail'>
+            详情
+             <image class='btn_sj' src="{{item.tag?'../../image/usj.png':'../../image/dsj.png'}}"></image>
+            </button>
+          </view>
+          <view class="course_detail {{item.tag?'showdetail':''}}">
+            <block wx:for="{{item.level}}" wx:for-item="cell" wx:for-index="cellIndex" wx:key="{{cell.title}}">
+              <view>
+                  <text class='course_detail_title'>{{cellIndex + 1}} 、{{cell.title}}</text>
+                <text class='course_detail_content'>{{cell.content}}</text>
+              </view>
+              <block wx:if="{{cell.img_list.length > 0}}">
+              <view class='course_image'>
+                <block wx:for="{{cell.img_list}}"  wx:for-item="sub" wx:key="{{sub}}">
+                  <image src='{{sub}}'></image>
+                </block>
+                </view>
+              </block>
+            </block>
+          </view>    
+        </view>
+      </block>
+      </view>
+    </view>
+
+    <!-- 学费预估 -->
+    <view class="study_free detail_con {{tab.curCon == '2'?'actc':''}}">
+       <view class='info_wrapper'>
+        <title data_title="学费预估"></title>
+        <view class='info_form'>
+          <form bindsubmit="formSubmit">
+            <view class='info_list'>
+              <input placeholder="请输入姓名" name='named' maxlength='10'/>
+            </view>
+            <view class='info_list'>
+              <input placeholder="请输入课程名称" name='classname' maxlength='20'/>
+            </view>
+            <view class='info_list'>
+              <input placeholder="是否有基础" name="base" maxlength='10'/>
+            </view>
+            <view class='info_list'>
+              <input placeholder="请输入联系方式" name="contact" maxlength='20' />
+            </view>
+            <view class='info_list'>
+              <button class='info_btn' hover-class="btn_act" form-type="submit">立即预估学习费用</button>
+            </view>
+          </form>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

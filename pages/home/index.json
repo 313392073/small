@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents":{
+    "headers":"/components/Headers/headers",
+    "title": "/components/Title/title",
+    "copvip": "/components/Copvip/Copvip"
+  }
+}
