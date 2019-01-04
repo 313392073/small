@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    datalist:[]
+    curr_id:'',
+    datalist:[],
+    videoimage: "block" //demo
   },
 
   /**
@@ -20,8 +22,8 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function () { 
+    this.videoCtx = wx.createVideoContext('myVideo') //demo
   },
 
   /**
@@ -64,6 +66,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  videoPlay: function (e) { //demo
+    this.setData({
+      curr_id: e.currentTarget.dataset.id,
+    })
+    this.videoCtx.play()
   },
   getSuccess:function(e){
     if (e.statusCode == 200){

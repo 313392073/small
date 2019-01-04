@@ -5,6 +5,6 @@
   right: 0;
 }
 .fixd-vip image{
-  width: 80rpx;
-  height: 95rpx;
+  width: 140rpx;
+  height: 160rpx;
 }

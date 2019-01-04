@@ -52,8 +52,10 @@ App({
       reqCourseFree: url +'/apps/index/tuition.html',
       reqCoupons: url + '/apps/wechat/index.html',
       reqCardBack: url + '/apps/wechat/voucher.html',
+      getConList: url + '/apps/wechat/coupons.html',
+      getCopcards: url +'/apps/wechat/wechat.html',//领取优惠券
       reqCardList: url +'/apps/index/coupons.html',
-      reqGetcop: url + '/apps/wechat/index.html',
+      reqGetcop: url + '/apps/wechat/index.html', //000
       reqtraining: url + '/apps/index/training.html',
       reqteacher: url +'/apps/index/teacher.html',
       copUrl: url + '/upload/20181125/5d6d4fca8b424473f2795cb2c6fd9e06.png',

@@ -19,7 +19,7 @@ Page({
       member_id: wx.getStorageSync('id')
      }
     //添加卡券成功的回调
-    common.reqUrl(app.globalData.config['reqGetcop'], 'POST', obj, this.reqSuccess, this.getFail)
+    common.reqUrl(app.globalData.config['getConList'], 'POST', obj, this.reqSuccess, this.getFail)
   },
 
   /**
@@ -40,6 +40,7 @@ Page({
     })
   },
   reqSuccess:function(e){
+    console.log(e)
     this.setData({
       coplist:e.data.info
     })
@@ -66,9 +67,9 @@ Page({
         ],
         success(res) {
           if (res[0].isSuccess) {
-            self.sendCard(res.cardList[0]['code'], res.cardList[0]['cardId'])
+              self.sendCard(res.cardList[0]['code'], res.cardList[0]['cardId'])
           }else{
-            self.getFail(res)
+              self.getFail(res)
           }
         },
         
@@ -97,9 +98,10 @@ Page({
       card_id: card_id,
       member_id: wx.getStorageSync('id') ? wx.getStorageSync('id') : wx.getStorageSync('userIdInfo').id
     }
-    common.reqUrl(app.globalData.config['reqCardBack'], 'POST', obj, this.getSuccess, this.getFail)
+    common.reqUrl(app.globalData.config['getCopcards'], 'POST', obj, this.getSuccess, this.getFail)
   },
   getSuccess:function(e){
+    console.log(e)
     wx.showToast({
       title: '领取优惠券成功，快去使用吧！',
       icon: 'success',

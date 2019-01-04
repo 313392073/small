@@ -7,7 +7,7 @@
 }
 .freelis_video{
   width: 100%;
-  height: 400rpx;
+  height: 350rpx;
   margin-bottom: 25rpx;
 }
 .freelis_title{
@@ -24,4 +24,40 @@
   text-align: center;
   font-size: 28rpx;
   color: #ff9900;
+}
+
+/* demo */
+.video{
+  width: 100%;
+  height: 350rpx;
+  margin-bottom: 25rpx;
+	position: relative;
+}
+.model-img{
+	width: 100%!important;
+	height: 350rpx!important;
+}
+.img-box{
+  width: 100%;
+  height: 350rpx;
+  position: relative;
+}
+.model-btn{
+	position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+    border:5px solid #fff;
+    background-color: rgba(0,0,0,.3);
+}
+.play-icon{
+    margin:28rpx 42rpx;
+    border-top:26rpx solid transparent;
+    border-left:36rpx solid #fff;
+    border-bottom:22rpx solid transparent;
 }

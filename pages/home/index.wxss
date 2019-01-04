@@ -84,7 +84,7 @@ intref_img_bg02{
   height: 46rpx;
 }
 .plan_wrapper{
-  min-height: 540rpx;
+  min-height: 950rpx;
 }
 .plan_title{
   display: block;

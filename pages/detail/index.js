@@ -16,6 +16,7 @@ Page({
     introbject:[],
     introinfo:{},
     step:[],
+    videoimage: "block" //默认显示封面
   },
 
   /**
@@ -34,7 +35,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.videoCtx = wx.createVideoContext('myVideo')
   },
 
   /**
@@ -77,6 +78,13 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  //点击播放按钮，封面图片隐藏,播放视频
+  bindplay: function (e) {
+    this.setData({
+      tab_image: "none"
+    }),
+      this.videoCtx.play()
   },
   tohome: function(e){
     wx.switchTab({
@@ -140,7 +148,6 @@ Page({
     common.showError();
   },
   getSuccess:function(e){
-    console.log(e)
     this.setData({
       introlist: e.data.info.target_list ? e.data.info.target_list:[],
       introSpec: e.data.info.features ? e.data.info.features:[],

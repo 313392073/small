@@ -28,8 +28,8 @@
     <!-- 预约课程 -->
     <view class="course_wrapper tab_box {{tab.curcon=='0'?'actd':''}}">
       <block wx:if="{{courselist.length > 0}}">
-        <block wx:for="{{courselist}}"  wx:key="{{item.id}}">
-          <view class='course_list' bindtap='godetail' data-ids='{{item.id}}'>
+        <block wx:for="{{courselist}}"  wx:key="{{item.course_id}}">
+          <view class='course_list' bindtap='godetail' data-ids='{{item.course_id}}'>
             <view class='course_left'><image src="{{item.img[item.img.length-1]?item.img[item.img.length-1]:'../../image/detailbg.png'}}"></image></view>
             <view class='course_right'>
               <text class='course_title'>{{item.title}}</text>

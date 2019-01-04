@@ -20,7 +20,7 @@
 
       <view class='study_list'>
         <block wx:for="{{introlist}}" wx:key="{{item}}">
-        <text>{{index+1}} . {{item}}   </text>
+        <text> {{item}}   </text>
         </block>
       </view>
 
@@ -52,7 +52,7 @@
 
       <view class='study_list'>
         <block wx:for="{{introbject}}" wx:key="{{item}}">
-        <text>{{index+1}} . {{item}} </text>
+        <text>{{item}} </text>
         </block>
       </view>
 
@@ -63,7 +63,16 @@
       <view class='detail_line'></view>
       <view class='detail_line'></view>
 
-      <video class='detail_video' controls src='{{introinfo.video}}'></video>
+      <view  class="video">
+        <video id="myVideo" class="myVideo" src="{{introinfo.video}}" custom-cache="{{false}}">
+        </video>
+        <cover-view class="controls" style="display:{{tab_image}};">
+        <cover-image class='video-bg' src="../../image/video-bg01.jpg" />
+        </cover-view>
+        <cover-view class="play" style="display:{{tab_image}};z-index:200;">
+        <cover-image bindtap="bindplay" class='play-icon' src="../../image/play2.png" />
+        </cover-view>
+    </view>
       <text class='detail_video_title'>{{introinfo.about}}</text>
       <view class='detail_video_desc'>
         <text>共{{introinfo.duration}}</text>

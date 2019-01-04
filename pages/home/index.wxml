@@ -7,15 +7,15 @@
   <swiper class='home-swiper-wrapper' indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" indicator-active-color="#ff9900">
   <block wx:for="{{imgurl}}" wx:key="item" circular='true'>
     <swiper-item>
-      <image src='{{item}}' class='home-banner-img'></image>
+      <image src='{{item}}' class='home-banner-img' mode="aspectFill"></image>
     </swiper-item>
   </block>
   </swiper>
   <view class='lisref_wrapper'>
     <title data_title='大数据课程推荐'></title>
     <view class='lisref_img_box'>
-      <image class='lisref_content_img' bindtap='gocouese' data-courseId='2' src='../../image/home02.jpg'></image>
-      <image class='lisref_content_img' bindtap='gocouese' data-courseId='3' src='../../image/home03.jpg'></image>
+      <image class='lisref_content_img' bindtap='gocouese' data-courseId='2' src='../../image/home02.png' mode="aspectFill"></image>
+      <image class='lisref_content_img' bindtap='gocouese' data-courseId='3' src='../../image/home03.png' mode="aspectFill"></image>
     </view>
     <view class='intref_wrapper'>
     <title data_title='大数据前景、职业、薪资等介绍'></title>
@@ -27,7 +27,7 @@
     </view>
     </view>
     <view class='intref_img'>
-      <image class='intref_img_bg01' src='../../image/hbg01.png'></image>
+      <image class='intref_img_bg01' src='../../image/hbg01.png' mode="aspectFill"></image>
     </view>
     <view class='intref_desc_box'>
       <text class='intref_desc'>真正大数据市场价值很高</text>
@@ -36,7 +36,7 @@
     </view>
     </view>
     <view class='intref_img'>
-      <image class='intref_img_bg02' src='../../image/hbg02.png'></image>
+      <image class='intref_img_bg02' src='../../image/hbg02.png' mode="aspectFill"></image>
     </view>
     <view class='intref_desc_box'>
       <text class='intref_desc'>大数据工程师人才缺口大</text>
@@ -45,7 +45,7 @@
     </view>
   </view>
   <view class='intref_img'>
-      <image class='intref_img_bg03' src='../../image/hbg03.png'></image>
+      <image class='intref_img_bg03' src='../../image/hbg03.png' mode="aspectFill"></image>
   </view>
   <title data_title='专业的职场规划'></title>
   
@@ -127,7 +127,7 @@
     <swiper class='home-swiper-wrapper' indicator-dots="{{indicatorDotsd}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" indicator-active-color="#ff9900">
     <block wx:for="{{actlist}}" wx:key="item.desc" circular='true'>
       <swiper-item>
-        <image class='prelis_img' src='{{item.img}}'></image>
+        <image class='prelis_img' src='{{item.img}}' mode="aspectFill"></image>
         <text class='prelis_text'>{{item.title}}</text>
       </swiper-item>
     </block>

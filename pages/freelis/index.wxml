@@ -6,8 +6,16 @@
     <block wx:if="{{datalist && datalist.length>0}}">
       <block wx:for="{{datalist}}" wx:key="item.title">
         <view class='freelis_list'>
-          <!-- <view class='freelis_video'></view> -->
-          <video class='freelis_video' src="{{item.video}}" controls></video>
+          <view  class="video" data-id="{{item.id}}" bindtap="videoPlay" >
+          <video wx:if="{{curr_id == item.id}}" id="myVideo" class='freelis_video' src="{{item.video}}" 
+          poster="{{item.img}}"  objectFit="cover"  controls></video>
+          <view wx:else class='img-box'>
+              <image class="model-img" mode="aspectFill" src="{{item.img}}"></image>
+              <view class="model-btn">
+                    <view class="play-icon"></view>
+              </view>
+          </view>
+        </view>
           <text class='freelis_title'>{{item.title}}</text>
           <text class='freelis_desc' decode="{{true}}" space="{{true}}">共{{item.duration}}&emsp;&emsp;更新时间 {{item.add_time}}</text>
         </view>

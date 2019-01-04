@@ -311,6 +311,7 @@ Page({
     common.showError();
   },
   orderSuccess:function(e){
+    console.log(e.data.info)
     wx.hideLoading();
     this.setData({
       courselist: e.data.info
