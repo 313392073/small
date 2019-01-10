@@ -22,7 +22,6 @@ App({
               }
             })
           }else{
-            // return false;
             reject(false);
           }
         }
@@ -51,8 +50,8 @@ App({
       reqCourse_info: url +'/apps/index/course_info.html',
       reqCourseFree: url +'/apps/index/tuition.html',
       reqCoupons: url + '/apps/wechat/index.html',
-      reqCardBack: url + '/apps/wechat/voucher.html',
-      getConList: url + '/apps/wechat/coupons.html',
+      reqCardBack: url + '/apps/wechat/voucher.html', //领取卡券后的回调
+      getConList: url + '/apps/wechat/coupons.html', //优惠券列表
       getCopcards: url +'/apps/wechat/wechat.html',//领取优惠券
       reqCardList: url +'/apps/index/coupons.html',
       reqGetcop: url + '/apps/wechat/index.html', //000

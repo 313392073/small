@@ -1,8 +1,8 @@
 <!--pages/home/index.wxml-->
 <view class='wrapper'>
-  <block wx:if="{{showCop}}">
+  <!-- <block wx:if="{{showCop}}"> -->
     <copvip bindshowTap="showVip"></copvip>
-  </block>
+  <!-- </block> -->
   <headers bindpagePerson="gotomy"></headers>
   <swiper class='home-swiper-wrapper' indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" indicator-active-color="#ff9900">
   <block wx:for="{{imgurl}}" wx:key="item" circular='true'>

@@ -21,10 +21,11 @@
 }
 .cop-box{
   width: 520rpx;
-  height: 585rpx;
+  min-height: 585rpx;
   background-color: #ffecd2;
   margin: -3rpx auto 200rpx;
   padding-top: 25rpx;
+  padding-bottom: 25rpx;
 }
 .list{
   height:155rpx;

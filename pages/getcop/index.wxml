@@ -21,7 +21,7 @@
         <block wx:else>
          <view class='list' style="background: url('{{copUrl}}') no-repeat center;background-size: contain;">
           <view class='get-bths'>
-            <button class='btn_get btn_get_nobk' hover-class="login_hover" data-datas='{{item}}' bindtap='getcop'>领取</button>
+            <button class='btn_get btn_get_nobk' hover-class="login_hover" data-datas='{{item}}'  bindtap='getcop'>领取</button>
           </view>
           <view class='get-desc'>
             <view class='price'><text>{{item.price}}</text>元</view>

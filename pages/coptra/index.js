@@ -89,6 +89,7 @@ Page({
     
   },
   teaSuccess:function(e){
+    console.log(e)
     let self = this
     if (e.statusCode == 200) {
       self.setData({

@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    coplist:[],
+    coplist: [],
     copUrl: app.globalData.config['copUrl']
   },
 
@@ -17,8 +17,7 @@ Page({
   onLoad: function (options) {
     let obj = {
       member_id: wx.getStorageSync('id')
-     }
-    //添加卡券成功的回调
+    }
     common.reqUrl(app.globalData.config['getConList'], 'POST', obj, this.reqSuccess, this.getFail)
   },
 
@@ -39,68 +38,80 @@ Page({
       url: '../../pages/home/index'
     })
   },
-  reqSuccess:function(e){
-    console.log(e)
+  reqSuccess: function (e) { //优惠券列表
     this.setData({
-      coplist:e.data.info
+      coplist: e.data.info
     })
   },
   //这个要换成查看的
-  showTip:function(){
+  showTip: function () {
     wx.showToast({
       title: '你已经领取该优惠券了，赶紧去使用吧',
-      icon:'none',
-      duration:2000
+      icon: 'none',
+      duration: 2000
     })
   },
-  //领取优惠券
-  getcop:function(e){
+  //领取优惠券  先调用后台的接口
+  getcop: function (e) {
+    console.log(e)
     let self = this;
-    if(wx.addCard) {
-      let datas = e.currentTarget.dataset.datas
-      wx.addCard({
-        cardList: [
-          {
-            cardId:datas.card_id,
-            cardExt: '{"code":"","openid":"","timestamp":' + datas.timestamp + ',"nonce_str":"' + datas.nonce_str + '","signature":"' + datas.signature + '"}'
-          }
-        ],
-        success(res) {
-          if (res[0].isSuccess) {
+    let datas = e.currentTarget.dataset.datas
+    let params = {
+      card_id: datas.cardid
+    }
+    common.reqUrl(app.globalData.config['getCopcards'], 'POST', params, self.cardSuccess, self.getFail) 
+  },
+  cardSuccess:function(e){ //后台返回数据  领取优惠券
+    let self = this;
+    if (e.data.code == 1 && e.statusCode == 200) {
+        if (wx.addCard) {
+          wx.addCard({
+          cardList: [
+            {
+              cardId: e.data.info.card_id,
+              cardExt: '{"code":"","openid":"","timestamp":' + e.data.info.timestamp + ',"nonce_str":"' + e.data.info.nonce_str + '","signature":"' + e.data.info.signature + '"}'
+            }
+          ],
+          success(res) {
+            console.log(res.cardList[0])
+            if (res.cardList[0].isSuccess) {
               self.sendCard(res.cardList[0]['code'], res.cardList[0]['cardId'])
-          }else{
+            } else {
               self.getFail(res)
+            }
+          },
+
+          fail: function (err) {
+            if (err.errMsg == 'addCard:fail cancel') {
+              wx.showToast({
+                  title: '你已经取消领取优惠券',
+                  icon: 'none',
+              })
+            } else {
+              this.getFail(err)
+            }
           }
-        },
-        
-        fail:function(err){
-          if (err.errMsg == 'addCard:fail cancel'){
-            wx.showToast({
-              title: '你已经取消领取优惠券',
-              icon: 'none',
-            })
-          }else{
-            this.getFail(err)
-          }
-        }
-      })
+        })
+      } else {
+        wx.showModal({
+          title: '温馨提示',
+          content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试！'
+        })
+      }
     }else{
-      wx.showModal({
-        title: '温馨提示',
-        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试！'
-      })
+      common.showError()
     }
   },
-    //添加卡券后的回调
-  sendCard: function (code, card_id){
+  //添加卡券后的回调
+  sendCard: function (code, card_id) {
     let obj = {
       code: code,
       card_id: card_id,
       member_id: wx.getStorageSync('id') ? wx.getStorageSync('id') : wx.getStorageSync('userIdInfo').id
     }
-    common.reqUrl(app.globalData.config['getCopcards'], 'POST', obj, this.getSuccess, this.getFail)
+    common.reqUrl(app.globalData.config['reqCardBack'], 'POST', obj, this.getSuccess, this.getFail)
   },
-  getSuccess:function(e){
+  getSuccess: function (e) {
     console.log(e)
     wx.showToast({
       title: '领取优惠券成功，快去使用吧！',
@@ -111,9 +122,9 @@ Page({
       wx.navigateTo({
         url: '../../pages/getcop/index',
       })
-    },2100)
+    }, 2100)
   },
-  getFail:function(err){
+  getFail: function (err) {
     common.showError()
   }
 })
