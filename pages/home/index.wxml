@@ -93,8 +93,8 @@
       </view>
       <view class='adv_03' style="background:url('{{copHomebg2}}') no-repeat center; background-size: contain;">
         <view>
-        <text>小班线下</text>
-        <text>线上教学</text>
+        <text>线下小班</text>
+        <text>面授教学</text>
         </view>
       </view>
     </view>

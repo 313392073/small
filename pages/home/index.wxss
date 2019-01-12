@@ -22,7 +22,8 @@
 }
 .lisref_content_img{
   margin-right:50rpx; 
-  height: 140rpx;
+  height: 136rpx;
+  max-width: 90%;
 }
 .lisref_content_img:nth-child(2){
   margin-right: 0
