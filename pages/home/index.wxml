@@ -20,7 +20,7 @@
     <view class='intref_wrapper'>
     <title data_title='大数据前景、职业、薪资等介绍'></title>
     <view class='intref_desc_box'>
-      <text class='intref_desc'>市面大数据培训占比</text>
+      <text class='intref_desc'>市面大数据培训占比{{showCop}}</text>
     </view>
     <view class='intref_text_box'>
       <text class='intref_text'>{{cstr}}</text>

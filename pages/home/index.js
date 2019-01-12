@@ -23,7 +23,6 @@ Page({
     plancur:0,
     actlist: [],
     msg:{},
-    // showCop:false, //控制领取优惠券的跳转(授权和未授权)
     copHomebg1: app.globalData.config['copHomebg1'],
     copHomebg2: app.globalData.config['copHomebg2']
   },
@@ -41,7 +40,6 @@ Page({
       let loginInfo = common.getLogin(app.globalData.config['reqlogin'],nickName, avatarUrl);
       loginInfo.then(res => {
         that.setData({
-          // showCop:true,
           id:res.id
         })
       })
@@ -134,6 +132,9 @@ Page({
           planlist: brr,
           actlist: e.data.info.course_list
         })
+        if (e.data.info.coupons_status == 1) {
+          wx.setStorageSync('couStatus', true)
+        }
     }else{
       common.showError()
     }
